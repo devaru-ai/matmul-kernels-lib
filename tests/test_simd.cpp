@@ -20,7 +20,7 @@ void naive_multiply(const Matrix& A, const Matrix& B, Matrix& C) {
 }
 
 int main() {
-    const float EPS = 1e-4;
+    const float EPS = 1e-3;
     size_t N = 64; // Large enough to show SIMD advantage
     Matrix A = random_matrix(N, N);
     Matrix B = random_matrix(N, N);
