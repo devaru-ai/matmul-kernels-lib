@@ -1,6 +1,5 @@
-# Matrix Multiplication Optimization Library
-
-This project is a modular, high-performance matrix multiplication library that explores multiple algorithms and hardware accelerations for dense and structured matrices.
+# Optimized Matrix Multiplication Library
+This library is designed for exploring and comparing various matrix multiplication algorithms and hardware optimizations in a modular framework.
 
 ## Implemented Algorithms
 
@@ -11,7 +10,7 @@ This project is a modular, high-performance matrix multiplication library that e
 - **Multithreaded Algorithm:** Exploits multicore CPUs with parallelism across threads.
 - **GPU-Accelerated Algorithm:** Uses CUDA to leverage thousands of GPU threads for massive speedups.
 - **Tensor Core–Optimized Algorithm:** NVIDIA hardware acceleration with FP16/BF16 for peak performance.
-- **Strassen’s Algorithm (Optional):** Divide-and-conquer method with $$O(n^{2.807})$$ complexity.
+- **Strassen’s Algorithm:** Divide-and-conquer method with $$O(n^{2.807})$$ complexity.
 
 
 
@@ -25,10 +24,8 @@ This project is a modular, high-performance matrix multiplication library that e
 
 ## Hardware Targets
 
-- **CPU:** Single-core and multi-core
-- **CPU:** SIMD vectorization
-- **GPU:** CUDA, large parallel workloads
-- **GPU:** Tensor Cores (NVIDIA Volta and newer)
+- CPUs(Single-core, Multi-core, and SIMD-optimized)
+- GPUs (CUDA and NVIDIA Tensor Cores)
 
 
 
@@ -78,7 +75,7 @@ nvcc -arch=sm_75 -c src/gpu/cuda_tensorcore.cu -o cuda_tensorcore.o
 g++ -c src/gpu/opencl_naive.cpp -o opencl_naive.o -I/usr/local/cuda/include
 ```
 
-#### Link all GPU components (including OpenCL):
+#### Link all GPU components:
 
 ```bash
 g++ run_gpu_benchmarks.cpp cuda_naive.o cuda_tensorcore.o opencl_naive.o \
